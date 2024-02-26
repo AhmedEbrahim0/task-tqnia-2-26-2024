@@ -46,4 +46,5 @@ Route::group(['middleware'=>['auth:sanctum','is_verify']]   ,function(){
     Route::get('/stats',[StatsController::class,'index']);
 });
 
+
 Route::middleware('auth:sanctum')->post('/verifications',[VerificationEmailController::class,"verify"]);

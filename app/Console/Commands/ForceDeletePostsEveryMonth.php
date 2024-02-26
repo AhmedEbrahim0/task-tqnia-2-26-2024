@@ -26,7 +26,8 @@ class ForceDeletePostsEveryMonth extends Command
      */
     public function handle()
     {
-        $posts=Post::onlyTrashed()->get();
+        $posts=Post::onlyTrashed()->whereDate( 'deleted_at', '<=', now()->subDays( 30 ) )->get();
+        // $posts=Post::onlyTrashed()->whereDate( 'deleted_at', '<=', now()->subMinutes(1) )->get();
         foreach($posts as $post)
             $post->forceDelete();
     }

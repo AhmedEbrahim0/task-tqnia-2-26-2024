@@ -17,21 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/login",function(){
-    return "asf";
+    return " ";
 })->name("login");
 
 Route::get('/', function () {
-    
-$response = Http::get('https://randomuser.me/api/');
-
-if ($response->successful()) {
-    $data = $response->json()["results"][0];
-    // Process the fetched data herez
-    return $data;
-} else {
-    // Handle the case where the request was not successful
-    $statusCode = $response->status();
-    // Log or handle the error
-}
-    return "asfsa";
+    return " ";
 });

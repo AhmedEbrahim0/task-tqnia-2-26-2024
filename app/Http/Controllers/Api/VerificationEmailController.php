@@ -19,6 +19,7 @@ class VerificationEmailController extends Controller
         if($user->code == $request->code){
             User::find($user->id)->update([
                 "is_verify"=>true,
+                "code"=>null,
             ]);
             return $this->Response(null,"Verified successfully",200);
         }else{

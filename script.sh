@@ -1,0 +1,1 @@
+/usr/bin/php /home/u128940752/public_html/tqnia php artisan cron:run > /dev/null 2>&1
